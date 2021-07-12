@@ -5,5 +5,5 @@
     - name: clone repo
       git:
         repo: https://github.com/express42/reddit.git
-        dest: /opt/reddit
+        dest: /tmp/reddit_express42
         version: microservices_for_mc
