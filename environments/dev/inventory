@@ -1,0 +1,11 @@
+
+[practice]
+server5
+
+[web]
+server5
+server6
+server7
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
