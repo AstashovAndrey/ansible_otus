@@ -1,9 +1,9 @@
 - hosts: practice
   gather_facts: false
-# test
-  tasks:
+
+  pre_tasks:
     - name: clone repo
       git:
-        repo: <repo_url> # адрес репозитория
+        repo: https://github.com/express42/reddit.git
         dest: /opt/reddit
         version: microservices_for_mc
