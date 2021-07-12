@@ -1,6 +1,0 @@
----
-- name: COMMENT - Install soft
-  import_tasks: install.yml
-
-- name: COMMENT - Make config
-  import_tasks: configure.yml
