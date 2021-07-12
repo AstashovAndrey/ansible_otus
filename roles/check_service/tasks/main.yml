@@ -2,7 +2,7 @@
 - name: Check service
   wait_for:
     host: 127.0.0.1
-    port: {{  item  }}
+    port: '{{  item  }}'
     timeout: 3
   loop:
     - 9292
