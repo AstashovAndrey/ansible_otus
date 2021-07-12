@@ -10,3 +10,9 @@
     src: reddit-ui.service.j2
     dest: '/etc/systemd/system/reddit-ui.service'
   notify: reload reddit-ui
+
+- name: reload reddit-ui
+  systemd: 
+    name: reddit-ui 
+    state: restarted 
+    daemon_reload: true
