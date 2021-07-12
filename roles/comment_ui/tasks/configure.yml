@@ -1,0 +1,18 @@
+- name: 'add {{ service }}_config'
+  template:
+    src: 'template_files/config_{{ service }}.j2'
+    dest: '{{ reddit_path }}/{{ service }}/{{ service }}_config'
+  notify: reload reddit-{{ service }}
+
+
+- name: create reddit-{{ service }}.service
+  template:
+    src: 'template_files/service.reddit-{{ service }}.j2'
+    dest: '/etc/systemd/system/reddit-{{ service }}.service'
+  notify: reload reddit-{{ service }}
+
+- name: reload reddit-{{ service }}
+  systemd:
+    name: reddit-{{ service }}
+    state: restarted
+    daemon_reload: true

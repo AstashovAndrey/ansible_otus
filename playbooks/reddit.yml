@@ -12,8 +12,15 @@
 
 
   roles:
-    - ui
-    - comment
-    - post
-    - check_service
+    - role: comment_ui
+      vars:
+        service: ui
+
+    - role: comment_ui
+      vars:
+        service: comment
+
+    - role: post
+    - role: db
+    - role: check_service
     
