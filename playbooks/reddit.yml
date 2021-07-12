@@ -1,13 +1,14 @@
 - hosts: practice
   gather_facts: false
+  become: true
 
 
   pre_tasks:
     - name: clone repo
       git:
         repo: https://github.com/express42/reddit.git
-        dest: {{ reddit_path }}
-        version: microservices_for_mc  
+        dest: '{{ reddit_path }}'
+        version: microservices_for_mc
 
 
   roles:
