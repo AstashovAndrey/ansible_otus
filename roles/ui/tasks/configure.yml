@@ -4,9 +4,9 @@
     dest: '{{ reddit_path }}/ui/ui_config'
   notify: reload reddit-ui
 
-- name: enable and start reddit-ui
-  systemd:
-    state: started
-    name: reddit-ui
-    enabled: true
-    daemon_reload: true
+
+- name: create reddit-ui.service
+  template:
+    src: reddit-ui.service.j2
+    dest: '/etc/systemd/system/reddit-ui.service'
+  notify: reload reddit-ui
