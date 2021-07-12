@@ -1,6 +1,11 @@
 ---
-- name: Check UI service
+- name: Check service
   wait_for:
     host: 127.0.0.1
-    port: 9292
+    port: {{  item  }}
     timeout: 3
+  loop:
+    - 9292
+    - 4567
+    - 5000
+    - 27017
