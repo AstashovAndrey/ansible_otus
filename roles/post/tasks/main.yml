@@ -1,6 +1,14 @@
 ---
-- name: POST - Install soft
-  import_tasks: install.yml
+
+- name: Edit requirements.txt
+  template:
+    src: requirements.txt
+    dest: '{{ reddit_path }}/post-py/requirements.txt'
+
 
 - name: POST - Make config
   import_tasks: configure.yml
+
+
+- name: POST - Install soft
+  import_tasks: install.yml

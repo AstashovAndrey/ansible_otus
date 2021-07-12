@@ -1,7 +1,7 @@
 - name: add post_config
   template:
     src: post_config.j2
-    dest: '{{ reddit_path }}/post/post_config'
+    dest: '{{ reddit_path }}/post-py/post_config'
   notify: reload reddit-post
 
 
@@ -10,6 +10,7 @@
     src: reddit-post.service.j2
     dest: '/etc/systemd/system/reddit-post.service'
   notify: reload reddit-post
+
 
 - name: reload reddit-post
   systemd: 
