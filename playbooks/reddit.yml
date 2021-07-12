@@ -1,10 +1,9 @@
-- hosts: test
+- hosts: practice
   gather_facts: false
 
   tasks:
-
-- name: clone repo
-  git:
-    repo: <repo_url> # адрес репозитория
-    dest: /opt/reddit
-    version: microservices_for_mc
+    - name: clone repo
+      git:
+        repo: <repo_url> # адрес репозитория
+        dest: /opt/reddit
+        version: microservices_for_mc
