@@ -14,5 +14,6 @@
   roles:
     - ui
     - comment
+    - post
     - check_service
     

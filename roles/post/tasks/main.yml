@@ -1,2 +1,6 @@
 ---
-# tasks file for post
+- name: POST - Install soft
+  import_tasks: install.yml
+
+- name: POST - Make config
+  import_tasks: configure.yml
