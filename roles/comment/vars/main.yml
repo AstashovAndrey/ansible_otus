@@ -1,2 +1,4 @@
 ---
 # vars file for comment
+COMMENT_DATABASE_HOST: 127.0.0.1
+COMMENT_DATABASE_PORT: 27017

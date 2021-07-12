@@ -1,0 +1,18 @@
+- name: add comment_config
+  template:
+    src: comment_config.j2
+    dest: '{{ reddit_path }}/comment/comment_config'
+  notify: reload reddit-ui
+
+
+- name: create reddit-comment.service
+  template:
+    src: reddit-comment.service.j2
+    dest: '/etc/systemd/system/reddit-comment.service'
+  notify: reload reddit-comment
+
+- name: reload reddit-comment
+  systemd: 
+    name: reddit-ui 
+    state: restarted 
+    daemon_reload: true

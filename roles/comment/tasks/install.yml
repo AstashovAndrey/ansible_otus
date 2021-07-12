@@ -4,7 +4,7 @@
     state: present
     update_cache: true
 
-- name: install UI dependencies
+- name: install comment dependencies
   bundler:
     state: present
-    gemfile: '{{ reddit_path }}/ui/Gemfile'
+    gemfile: '{{ reddit_path }}/comment/Gemfile'

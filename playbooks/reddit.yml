@@ -13,5 +13,6 @@
 
   roles:
     - ui
+    - comment
     - check_service
     
