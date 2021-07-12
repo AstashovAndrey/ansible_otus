@@ -1,0 +1,12 @@
+- name: add ui_config
+  template:
+    src: ui_config.j2
+    dest: '{{ reddit_path }}/ui/ui_config'
+  notify: reload reddit-ui
+
+- name: enable and start reddit-ui
+  systemd:
+    state: started
+    name: reddit-ui
+    enabled: true
+    daemon_reload: true

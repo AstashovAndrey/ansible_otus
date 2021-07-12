@@ -1,17 +1,16 @@
 - hosts: practice
   gather_facts: false
 
+
   pre_tasks:
-    
     - name: clone repo
       git:
         repo: https://github.com/express42/reddit.git
-        dest: /tmp/reddit_express42
-        version: microservices_for_mc
+        dest: {{ reddit_path }}
+        version: microservices_for_mc  
+
+
+  roles:
+    - ui
+    - check_service
     
-    - name: Copy service from repo express42
-      synchronize:
-        src: /tmp/reddit_express42/
-        dest: /opt/reddit
-        rsync_opts:
-          - "--exclude=.git"

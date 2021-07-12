@@ -1,0 +1,10 @@
+- name: install bundler
+  apt:
+    name: bundler
+    state: present
+    update_cache: true
+
+- name: install ui dependencies
+  bundler:
+    state: present
+    gemfile: '{{ reddit_path }}/ui/Gemfile'

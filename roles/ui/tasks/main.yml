@@ -1,2 +1,6 @@
 ---
-# tasks file for ui
+- name: UI - Install soft
+  import_tasks: install.yml
+
+- name: UI - Make config
+  import_tasks: configure.yml
