@@ -1,13 +1,13 @@
 - name: 'add {{ service }}_config'
   template:
-    src: 'config_{{ service }}.j2'
+    src: '../templates/config_{{ service }}.j2'
     dest: '{{ reddit_path }}/{{ service }}/{{ service }}_config'
   notify: reload reddit-{{ service }}
 
 
 - name: create reddit-{{ service }}.service
   template:
-    src: 'service.reddit-{{ service }}.j2'
+    src: '../templates/service.reddit-{{ service }}.j2'
     dest: '/etc/systemd/system/reddit-{{ service }}.service'
   notify: reload reddit-{{ service }}
 
