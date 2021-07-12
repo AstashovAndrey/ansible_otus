@@ -1,5 +1,5 @@
 ---
-# handlers file for ui
+# handlers file for 
 - name: reload reddit-post
   systemd: 
     name: reddit-post

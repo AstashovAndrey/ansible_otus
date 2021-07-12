@@ -13,6 +13,6 @@
 
 - name: reload reddit-comment
   systemd: 
-    name: reddit-ui 
+    name: reddit-comment 
     state: restarted 
     daemon_reload: true
