@@ -11,5 +11,7 @@
     
     - name: Copy service from repo express42
       synchronize:
-        src: /tmp/reddit_express42
+        src: /tmp/reddit_express42/
         dest: /opt/reddit
+        rsync_opts:
+          - "--exclude=.git"
